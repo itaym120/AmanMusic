@@ -17,12 +17,13 @@ TASTKS:
 7. append what currently hearing to last activity box
 8. make home tab work similar to youtube main page -- suggested + recently played
 9. make playlist tab work (playlists should work at #6)
-10. being able to 'like' a song and save it.
-11. saved tab show what saved.
-12. user clickable -- <options>, <log out>
-13. make chat work.
-14. make it being able to integrate in the future to identity based log-on system.
-15. feedback button?
+10. rate playlists and show them by rating order
+11. being able to 'like' a song and save it.
+12. saved tab show what saved.
+13. user clickable -- <options>, <log out>
+14. make chat work.
+15. make it being able to integrate in the future to identity based log-on system.
+16. feedback and upload buttons
 
 
 
