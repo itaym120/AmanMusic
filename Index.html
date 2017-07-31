@@ -1,0 +1,346 @@
+<html>
+<head>
+<link rel="icon" href="favicon.png" type="image/png" sizes="16x16">
+
+  <style>
+  a, a:link, a:visited,  a:hover, a:active{
+    text-decoration: none !important;
+    color: inherit !important;
+        transition-duration: 0.15s;
+  }
+  body {
+    background: -webkit-linear-gradient(-65deg, #43C6AC, #F8FFAE);
+    background: linear-gradient(-65deg, #43C6AC, #F8FFAE);
+  font-family: Assistant;
+  margin:0;
+  }
+  audio::-webkit-media-controls-panel{
+  background:rgba(255,255,255,0);
+  }
+  audio::-webkit-media-controls-play-button{
+  cursor: pointer;
+  }
+  audio::-webkit-media-controls-timeline::selection{
+  background-color: red;
+  }
+
+  h1{
+  font-family: Assistant !important;
+  color: #000000 !important;
+  font-size: 1.2em !important;
+  margin-top:1px !important;
+  margin-bottom:1px !important;
+  direction: rtl !important;
+  }
+  h2{
+  font-family: Assistant !important;
+  color: #7c7c7c !important;
+      font-size: 1em !important;
+      margin-top:0px !important;
+      margin-bottom:3px !important;
+          direction: rtl !important;
+  }
+
+  .albumart {
+            transition-duration: 0.45s;
+        position: relative;
+        }
+        .albumart:hover .album{
+          transition-duration: 0.25s;
+          filter: brightness(50%);
+        }
+        .albumart .playit {
+            position: absolute;
+            left: 67;
+            top: 67;
+            display: none;
+        }
+        .albumart .loveit {
+            position: absolute;
+            left: 16;
+            top: 98;
+            display: none;
+        }
+        .albumart:hover .loveit  {
+            display: block;
+
+        }
+        .albumart .playlistit {
+            position: absolute;
+            left: 180;
+            top: 100;
+            display: none;
+        }
+        .albumart:hover .playlistit  {
+            display: block;
+
+        }
+        .album{
+        transition-duration: 0.2s;
+        }
+        .albumart:hover .playit  {
+            display: block;
+
+        }
+
+#card{
+  box-shadow: 0px 0px 3px #999;
+  border-radius: 4px;
+  background: #fff;
+  width: 230px;
+}
+#cardphoto{
+  border-top-right-radius:4px;
+  border-top-left-radius:4px;
+}
+.fulltable{
+border-collapse:collapse;
+padding: 0;
+margin: 0;
+height:100%;
+width:100%;
+
+}
+::-webkit-scrollbar{
+    height:10px;
+    width:10px;
+    border-radius: 4px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+::-webkit-scrollbar:hover{
+    background: #c6c7ca;
+}
+::-webkit-scrollbar-thumb{
+    background:#777779;
+    border-radius: 4px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+  </style>
+  <script>
+  function updateSource(number){
+    var playme = document.getElementById('audio');
+    playme.src='songs/'+number+'.mp3';
+     playme.play();
+     document.title = number;
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- The site is built from 3 <tr>s, header, body and audioplayer. -->
+<table class="fulltable">
+<!-- HEADER -->
+  <tr>
+    <td colspan="2" style="background:rgba(255,255,255,0.8);" height="70">
+
+      <table class="fulltable">
+        <tr>
+          <td width="5%" align="middle"><div class="dropdown"><img src="icons/acc.svg"></div>
+          </td>
+          <td width="10%" align="middle"><input size="15" style="background: url(icons/search.svg) no-repeat scroll 159px 1px; padding-right:30px;border: 2px solid #6e706b;border-radius: 15px;outline: none;" type="text" dir="rtl" placeholder="חפש..." name="search"></td>
+          <td></td>
+          <td width="10%" align="middle"><a href="#"><img src="icons/star.svg"></a></td>
+          <td width="10%" align="middle"><a href="#"><img src="icons/playlist.svg"></a></td>
+          <td width="10%" align="middle"><a href="#"><img class="svg" src="icons/home.svg"></a></td>
+          <td width="180" align="middle"><img src="logo2.png"></td>
+        </tr>
+      </table>
+  </td></tr>
+<!-- END OF HEADER -->
+<!-- BODY -->
+  <tr style="background:rgba(255,255,255,0.7);"><td width="250" style="border-right: 5px solid #fff;">
+<!-- STALKING AND CHAT -->
+  <table class="fulltable">
+    <tr><td style="border-bottom: 5px solid #fff;border-top: 5px solid #fff;"><div id="chat" style="direction:rtl;overflow-y:scroll;overflow-wrap:break-word;width:250;height:100%;">גילעד פדר מנגן <b>Perfect Places</b><br>איתי מאירי מנגן <b>YMCA</b></div></td></tr>
+    <tr><td height="75%"><div id="chat" style="direction:rtl;overflow-y:scroll;overflow-wrap:break-word;width:250;height:100%;"><b>גילעד פדר:</b> היי.<br><b>איתי מאירי:</b> מה קורה?<br><b>גילעד פדר:</b> בסדר.</div></td></tr><tr><td height="1"><input id="chatting" style="background:rgba(255,255,255,0.6);direction:rtl;outline: none;border: 1px solid  rgba(255,255,255,0.6);;width: 100%;" placeholder="הצטרפ/י לשיחה!" type="text"></td></tr>
+  </table></td>
+<!-- TACHLES -->
+<td bgcolor="white">
+  <table class="fulltable">
+    <tr><td valign="top"><table class="fulltable">
+
+      <tr><td>
+        <table align="center" id="card">
+        <tr><td align="center"> <div class="albumart">
+        <div class="album">
+        <img height="230" id="cardphoto" src="album.png"></div>
+        <div class="playit">
+        <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
+        <div class="loveit">
+        <img style="cursor:pointer;" id="star1" onclick="document.getElementById("star1").src == 'icons/cardstarfill.svg') " src="icons/cardstarhollow.svg"></div>
+        <div class="playlistit">
+        <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
+        <h1>When We Were Young</h1><h2>Adele</h2></td></tr></table></div>
+      </td>
+
+      <td>
+        <table align="center" id="card">
+        <tr><td align="center"> <div class="albumart">
+        <div class="album">
+        <img height="230" id="cardphoto" src="album2.jpg"></div>
+        <div class="playit">
+        <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
+        <div class="loveit">
+        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <div class="playlistit">
+        <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
+        <h1>Perfect Places</h1><h2>Lorde</h2></td></tr></table></div>
+      </td>
+
+      <td>
+        <table align="center" id="card">
+        <tr><td align="center"> <div class="albumart">
+        <div class="album">
+        <img height="230" id="cardphoto" src="album3.png"></div>
+        <div class="playit">
+        <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
+        <div class="loveit">
+        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <div class="playlistit">
+        <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
+        <h1>Shape of You</h1><h2>Ed Sheeran</h2></td></tr></table></div>
+      </td>
+
+      <td>
+        <table align="center" id="card">
+        <tr><td align="center"> <div class="albumart">
+        <div class="album">
+        <img height="230" id="cardphoto" src="album4.jpg"></div>
+        <div class="playit">
+        <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
+        <div class="loveit">
+        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <div class="playlistit">
+        <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
+        <h1>How Far I'll Go</h1><h2>Moana Soundtrack</h2></td></tr></table></div>
+      </td>
+
+      <td>
+        <table align="center" id="card">
+        <tr><td align="center"> <div class="albumart">
+        <div class="album">
+        <img height="230" id="cardphoto" src="album9.jpg"></div>
+        <div class="playit">
+        <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
+        <div class="loveit">
+        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <div class="playlistit">
+        <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
+        <h1>Pull Yourself Together</h1><h2>The Boxer Rebellion</h2></td></tr></table></div>
+      </td>
+
+      <tr><td>
+        <table align="center" id="card">
+        <tr><td align="center"> <div class="albumart">
+        <div class="album">
+        <img height="230" id="cardphoto" src="album10.jpg"></div>
+        <div class="playit">
+        <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
+        <div class="loveit">
+        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <div class="playlistit">
+        <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
+        <h1>You Can't Always Get What You Want</h1><h2>The Rolling Stones</h2></td></tr></table></div>
+      </td>
+
+      <td>
+        <table align="center" id="card">
+        <tr><td align="center"> <div class="albumart">
+        <div class="album">
+        <img height="230" id="cardphoto" src="album5.png"></div>
+        <div class="playit">
+        <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
+        <div class="loveit">
+        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <div class="playlistit">
+        <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
+        <h1>24K Magic</h1><h2>Bruno Mars</h2></td></tr></table></div>
+      </td>
+
+      <td>
+        <table align="center" id="card">
+        <tr><td align="center"> <div class="albumart">
+        <div class="album">
+        <img height="230" id="cardphoto" src="album6.png"></div>
+        <div class="playit">
+        <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
+        <div class="loveit">
+        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <div class="playlistit">
+        <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
+        <h1>Daft Punk</h1><h2>Pentatonix</h2></td></tr></table></div>
+      </td>
+
+      <td>
+        <table align="center" id="card">
+        <tr><td align="center"> <div class="albumart">
+        <div class="album">
+        <img height="230" id="cardphoto" src="album7.png"></div>
+        <div class="playit">
+        <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
+        <div class="loveit">
+        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <div class="playlistit">
+        <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
+        <h1>One Last Time</h1><h2>Arianna Grande</h2></td></tr></table></div>
+      </td>
+
+      <td>
+        <table align="center" id="card">
+        <tr><td align="center"> <div class="albumart">
+        <div class="album">
+        <img height="230" id="cardphoto" src="album8.jpg"></div>
+        <div class="playit">
+        <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
+        <div class="loveit">
+        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <div class="playlistit">
+        <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
+        <h1>ממעמקים</h1><h2>עידן רייכל</h2></td></tr></table></div>
+      </td></tr>
+
+</table>
+
+
+
+
+</td></tr>
+  </table>
+
+</td></tr>
+<!-- END OF BODY -->
+<!-- AUDIOPLAYER -->
+<tr><td colspan="2" height="50" style="background: #f5f5f5;">
+  <table class="fulltable"><tr>
+    <td><audio id="audio" style="width: 100%;" controls><source id="audioSource" src="" type="audio/mpeg"></audio></td>
+      <td width="50" align="center"><img src="icons/playlist.svg"></td>
+      <td width="50"  align="center"><img src="icons/star.svg"></td>
+
+</tr></table>
+</td></tr>
+</table>
+<!-- END OF AUDIOPLAYER -->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+</body>
+</html>
