@@ -129,6 +129,12 @@ width:100%;
 .dropdown:hover .dropdown-content {
   display: block;
 }
+svg{
+  cursor:pointer;
+}
+svg:hover{
+  fill: #00601b !important;
+}
 
   </style>
   <script>
@@ -138,9 +144,13 @@ width:100%;
      playme.play();
      document.title = number;
   }
+  function star(TheID) {
+          document.getElementById('star1').src='icons/cardstarfill.svg';
+      }
   </script>
 </head>
-
+<script src="dist/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
 <body>
 
 <!-- The site is built from 3 <tr>s, header, body and audioplayer. -->
@@ -151,14 +161,49 @@ width:100%;
 
       <table class="fulltable">
         <tr>
-          <td width="5%" align="middle"><div class="dropdown"><img src="icons/acc.svg"></div>
+          <td width="5%" align="middle"><div class="dropdown">
+            <svg fill="#000000" height="36" viewBox="0 0 24 24" width="36">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          </div>
           </td>
           <td width="10%" align="middle"><input size="15" style="background: url(icons/search.svg) no-repeat scroll 159px 1px; padding-right:30px;border: 2px solid #6e706b;border-radius: 15px;outline: none;" type="text" dir="rtl" placeholder="חפש..." name="search"></td>
           <td></td>
-          <td width="10%" align="middle"><a href="#"><img src="icons/star.svg"></a></td>
-          <td width="10%" align="middle"><a href="#"><img src="icons/playlist.svg"></a></td>
-          <td width="10%" align="middle"><a href="#"><img class="svg" src="icons/home.svg"></a></td>
-          <td width="180" align="middle"><img src="logo2.png"></td>
+          <td width="10%" align="middle">
+
+            <svg id="movietop" onclick='show(3);' fill="#000000" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          </td>
+          <td width="10%" align="middle">
+            <svg id="startop" onclick='show(2);' fill="#000000" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          </td>
+          <td width="10%" align="middle">
+            <svg id="playlisttop" onclick='show(1);' enable-background="new 0 0 24 24" fill="#000000" height="24"  viewBox="0 0 24 24" width="24" x="0px" xml:space="preserve" y="0px">
+            <g>
+            	<path d="M0,0h24v24H0V0z" fill="none"/>
+            	<g>
+            		<rect height="2" width="12" x="4" y="10"/>
+            		<rect height="2" width="12" x="4" y="6"/>
+            		<rect height="2" width="8" x="4" y="14"/>
+            		<polygon points="14,14 14,20 19,17   "/>
+            	</g>
+            </g>
+            </svg>
+          </td>
+          <td width="10%" align="middle">
+            <svg id="hometop" onclick='show(0);' fill="#00962a" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          </td>
+          <td width="180" align="middle"><img style="user-drag: none; user-select: none;-moz-user-select: none;-webkit-user-drag: none;-webkit-user-select: none;-ms-user-select: none;" src="logo2.png"></td>
         </tr>
       </table>
   </td></tr>
@@ -167,11 +212,68 @@ width:100%;
   <tr style="background:rgba(255,255,255,0.7);"><td width="250" style="border-right: 5px solid #fff;">
 <!-- STALKING AND CHAT -->
   <table class="fulltable">
-    <tr><td style="border-bottom: 5px solid #fff;border-top: 5px solid #fff;"><div id="chat" style="direction:rtl;overflow-y:scroll;overflow-wrap:break-word;width:250;height:100%;">גילעד פדר מנגן <b>Perfect Places</b><br>איתי מאירי מנגן <b>YMCA</b></div></td></tr>
-    <tr><td height="75%"><div id="chat" style="direction:rtl;overflow-y:scroll;overflow-wrap:break-word;width:250;height:100%;"><b>גילעד פדר:</b> היי.<br><b>איתי מאירי:</b> מה קורה?<br><b>גילעד פדר:</b> בסדר.</div></td></tr><tr><td height="1"><input id="chatting" style="background:rgba(255,255,255,0.6);direction:rtl;outline: none;border: 1px solid  rgba(255,255,255,0.6);;width: 100%;" placeholder="הצטרפ/י לשיחה!" type="text"></td></tr>
+    <tr><td style="border-bottom: 5px solid #fff;"><div style="direction:rtl;overflow-y:scroll;overflow-wrap:break-word;width:250;height:100%;">גילעד פדר מנגן <b>Perfect Places</b><br>איתי מאירי מנגן <b>YMCA</b></div></td></tr>
+    <tr><td height="75%"><div style="direction:rtl;overflow-y:scroll;overflow-wrap:break-word;width:250;height:100%;"><b>גילעד פדר:</b> היי.<br><b>איתי מאירי:</b> מה קורה?<br><b>גילעד פדר:</b> בסדר.</div></td></tr>
+    <tr><td height="1"><input id="chatting" style="background:rgba(255,255,255,0.6);direction:rtl;outline: none;border: 1px solid  rgba(255,255,255,0.6);width: 100%;" placeholder="הצטרפ/י לשיחה!" type="text"></td></tr>
   </table></td>
 <!-- TACHLES -->
-<td bgcolor="white">
+<script>
+function show(nr) {
+  if (nr==0){
+          document.getElementById("theaudiobar").style.display="table-row";
+    document.getElementById("homey").style.display="table-cell";
+    document.getElementById("playlisty").style.display="none";
+    document.getElementById("starry").style.display="none";
+    document.getElementById("moviey").style.display="none";
+    document.getElementById('hometop').style.fill='#00962a';
+    document.getElementById('playlisttop').style.fill='#000';
+    document.getElementById('startop').style.fill='#000';
+    document.getElementById('movietop').style.fill='#000';
+  }
+  if (nr==1){
+    document.getElementById("theaudiobar").style.display="table-row";
+    document.getElementById("homey").style.display="none";
+    document.getElementById("playlisty").style.display="table-cell";
+    document.getElementById("starry").style.display="none";
+        document.getElementById("moviey").style.display="none";
+        document.getElementById('hometop').style.fill='#000';
+        document.getElementById('playlisttop').style.fill='#00962a';
+        document.getElementById('startop').style.fill='#000';
+        document.getElementById('movietop').style.fill='#000';
+  }
+  if (nr==2){
+      document.getElementById("theaudiobar").style.display="table-row";
+    document.getElementById("homey").style.display="none";
+    document.getElementById("playlisty").style.display="none";
+    document.getElementById("starry").style.display="table-cell";
+        document.getElementById("moviey").style.display="none";
+        document.getElementById('hometop').style.fill='#000';
+        document.getElementById('playlisttop').style.fill='#000';
+        document.getElementById('startop').style.fill='#00962a';
+        document.getElementById('movietop').style.fill='#000';
+  }
+if (nr==3){
+  document.getElementById("theaudiobar").style.display="none";
+  document.getElementById("homey").style.display="none";
+  document.getElementById("playlisty").style.display="none";
+  document.getElementById("starry").style.display="none";
+  document.getElementById("moviey").style.display="table-cell";
+  document.getElementById('hometop').style.fill='#000';
+  document.getElementById('playlisttop').style.fill='#000';
+  document.getElementById('startop').style.fill='#000';
+  document.getElementById('movietop').style.fill='#00962a';
+}
+      document.getElementById('hometop').style.transition = "0.375s";
+      document.getElementById('playlisttop').style.transition = "0.375s";
+      document.getElementById('startop').style.transition = "0.375s";
+      document.getElementById('movietop').style.transition = "0.375s";
+}
+</script>
+<td style="display:none;" id="moviey" bgcolor="white">MOVIE SHIT</td>
+<td style="display:none;" id="starry" bgcolor="white">STARRY NIGHT</td>
+<td style="display:none;" id="starry" bgcolor="white">STARRY NIGHT</td>
+<td style="display:none;" id="playlisty" bgcolor="white">PLAYING SHIT</td>
+<td style="display:table-cell;" id="homey" bgcolor="white">
   <table class="fulltable">
     <tr><td valign="top"><table class="fulltable">
 
@@ -183,7 +285,7 @@ width:100%;
         <div class="playit">
         <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
         <div class="loveit">
-        <img style="cursor:pointer;" id="star1" onclick="document.getElementById("star1").src == 'icons/cardstarfill.svg') " src="icons/cardstarhollow.svg"></div>
+        <img style="cursor:pointer;" id="star1" onclick="star();" src="icons/cardstarhollow.svg"></div>
         <div class="playlistit">
         <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
         <h1>When We Were Young</h1><h2>Adele</h2></td></tr></table></div>
@@ -197,7 +299,7 @@ width:100%;
         <div class="playit">
         <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
         <div class="loveit">
-        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <img style="cursor:pointer;" onclick="star();" src="icons/cardstarhollow.svg"></div>
         <div class="playlistit">
         <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
         <h1>Perfect Places</h1><h2>Lorde</h2></td></tr></table></div>
@@ -211,7 +313,7 @@ width:100%;
         <div class="playit">
         <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
         <div class="loveit">
-        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <img style="cursor:pointer;" onclick="star();" src="icons/cardstarhollow.svg"></div>
         <div class="playlistit">
         <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
         <h1>Shape of You</h1><h2>Ed Sheeran</h2></td></tr></table></div>
@@ -225,7 +327,7 @@ width:100%;
         <div class="playit">
         <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
         <div class="loveit">
-        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <img style="cursor:pointer;" onclick="star();" src="icons/cardstarhollow.svg"></div>
         <div class="playlistit">
         <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
         <h1>How Far I'll Go</h1><h2>Moana Soundtrack</h2></td></tr></table></div>
@@ -239,7 +341,7 @@ width:100%;
         <div class="playit">
         <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
         <div class="loveit">
-        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <img style="cursor:pointer;" onclick="star();" src="icons/cardstarhollow.svg"></div>
         <div class="playlistit">
         <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
         <h1>Pull Yourself Together</h1><h2>The Boxer Rebellion</h2></td></tr></table></div>
@@ -253,7 +355,7 @@ width:100%;
         <div class="playit">
         <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
         <div class="loveit">
-        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <img style="cursor:pointer;" onclick="star();" src="icons/cardstarhollow.svg"></div>
         <div class="playlistit">
         <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
         <h1>You Can't Always Get What You Want</h1><h2>The Rolling Stones</h2></td></tr></table></div>
@@ -267,7 +369,7 @@ width:100%;
         <div class="playit">
         <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
         <div class="loveit">
-        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <img style="cursor:pointer;" onclick="star();" src="icons/cardstarhollow.svg"></div>
         <div class="playlistit">
         <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
         <h1>24K Magic</h1><h2>Bruno Mars</h2></td></tr></table></div>
@@ -281,7 +383,7 @@ width:100%;
         <div class="playit">
         <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
         <div class="loveit">
-        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <img style="cursor:pointer;" onclick="star();" src="icons/cardstarhollow.svg"></div>
         <div class="playlistit">
         <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
         <h1>Daft Punk</h1><h2>Pentatonix</h2></td></tr></table></div>
@@ -295,7 +397,7 @@ width:100%;
         <div class="playit">
         <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
         <div class="loveit">
-        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <img style="cursor:pointer;" onclick="star();" src="icons/cardstarhollow.svg"></div>
         <div class="playlistit">
         <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
         <h1>One Last Time</h1><h2>Arianna Grande</h2></td></tr></table></div>
@@ -309,7 +411,7 @@ width:100%;
         <div class="playit">
         <img style="cursor:pointer;" onclick="updateSource(1);" src="icons/play.png"></div>
         <div class="loveit">
-        <img style="cursor:pointer;" src="icons/cardstarhollow.svg"></div>
+        <img style="cursor:pointer;" onclick="star();" src="icons/cardstarhollow.svg"></div>
         <div class="playlistit">
         <img  style="cursor:pointer;" src="icons/cardplaylist.svg"></div>
         <h1>ממעמקים</h1><h2>עידן רייכל</h2></td></tr></table></div>
@@ -317,20 +419,34 @@ width:100%;
 
 </table>
 
-
-
-
 </td></tr>
   </table>
 
 </td></tr>
 <!-- END OF BODY -->
 <!-- AUDIOPLAYER -->
-<tr><td colspan="2" height="50" style="background: #f5f5f5;">
+<tr id="theaudiobar"><td colspan="2" height="50" style="background: #f5f5f5;">
   <table class="fulltable"><tr>
     <td><audio id="audio" style="width: 100%;" controls><source id="audioSource" src="" type="audio/mpeg"></audio></td>
-      <td width="50" align="center"><img src="icons/playlist.svg"></td>
-      <td width="50"  align="center"><img src="icons/star.svg"></td>
+      <td width="50" align="center">
+        <svg enable-background="new 0 0 24 24" fill="#5a5a5a" height="24"viewBox="0 0 24 24" width="24" x="0px" y="0px">
+          <g id="XMLID_1_">
+	           <path d="M0,0h24v24H0V0z" fill="none"/>
+	            <g id="XMLID_2_">
+		              <rect height="2" id="XMLID_3_" width="12" x="4" y="10"/>
+		                <rect height="2" id="XMLID_4_" width="12" x="4" y="6"/>
+		                <rect height="2" id="XMLID_5_" width="8" x="4" y="14"/>
+		              <polygon id="XMLID_6_" points="14,14 14,20 19,17   "/>
+	            </g>
+          </g>
+        </svg>
+</td>
+      <td width="50"  align="center">
+        <svg fill="#5a5a5a" height="24" viewBox="0 0 24 24" width="24">
+            <path d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"/>
+            <path d="M0 0h24v24H0z" fill="none"/>
+        </svg>
+      </td>
 
 </tr></table>
 </td></tr>
@@ -338,7 +454,7 @@ width:100%;
 <!-- END OF AUDIOPLAYER -->
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 
