@@ -22,6 +22,7 @@ TASTKS:
 *smart search - by song name, singer, album or lyrocs (if available).
 
 *shortcuts:
+
 	right/left - move song 10 seconds forward/backward.
 	
 	ctrl right/ctrl left - move to the previous/next song in playlist.
