@@ -9,36 +9,33 @@ The API and code must be as tidy and readable as possible.
 
 TASTKS:
 
-* שאיבת תמונה, שם שיר ואומן מתיקיית DB.
+*Getting metadata from audiofils
 
-* dropdown לכפתור יוזר.
+*Dropdown menu for Account (top-left) imgage. (including about, report song problem...)
 
-* ניגון פלייליסט - אפשר בקלות בעזרת addTextTrack().
+* Playlist - using addTextTrack().
 
-* הצגה של הפלייליסט. מספר הtrackים  אשר להשיג בקלות בעזר  textTracks.length
+* Gesture+list in audiobar that there is a playlist. (num of songs playing can be achieved using textTracks.length
 
-*שמירה בDB שירים שאהבתי.
+*Saving users' starred songs in DB.
 
-*חיפוש חכם עפ"י פרמטרים.
+*smart search - by song name, singer, album or lyrocs (if available).
 
-* קיצורים - מקלדת 
-	ימינה שמאלה - להזיז זמן בשיר
-	קונטרול ימין שמאל - לקפוץ שיר
-	למעלה למטה - לשנות ווליום ווליום
-	רווח - עצור המשך
-	אלט ד - להתחיל לחפש שיר
-	אלט כ - אהבתי את השיר
-	אלט ר - להתחיל רנדום
-	אנטר - להתחיל לרשום בצ'אט משהו
+*shortcuts:
+	right/left - move song 10 seconds forward/backward.
+	ctrl right/ctrl left - move to the previous/next song in playlist.
+	up/down - change volume.
+	space - stop/continue song.
+	alt s - start typing in search.
+	alt d - starred/remove star for the current played song.
+	alt r - start shuffle.
+	enter - start typing in chat box.
+	
+* keeping scrollbar of chat at bottom
 
-* scrollbar of chat stays at bottom
+* unique url for playlists - and entering to the specific one if entered in url bar.
 
-* אם נשלח פלייליסט ספציפי - נכנס ספציפית אליו
-
-*מעבר יפה בין טאבים :(
-
-*דיווח על בעיה בשיר כפתור מכרטיסיה (פותח soft-pop-up).
-
+* pretty css transition between tabs.
 
 
 Thanks for reading and participating!
