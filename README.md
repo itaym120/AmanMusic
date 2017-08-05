@@ -23,12 +23,19 @@ TASTKS:
 
 *shortcuts:
 	right/left - move song 10 seconds forward/backward.
+	
 	ctrl right/ctrl left - move to the previous/next song in playlist.
+	
 	up/down - change volume.
+	
 	space - stop/continue song.
+	
 	alt s - start typing in search.
+	
 	alt d - starred/remove star for the current played song.
+	
 	alt r - start shuffle.
+	
 	enter - start typing in chat box.
 	
 * keeping scrollbar of chat at bottom
