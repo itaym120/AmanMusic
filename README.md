@@ -17,11 +17,11 @@ TASTKS:
 
 * Gesture+list in audiobar that there is a playlist. (num of songs playing can be achieved using textTracks.length
 
-*Saving users' starred songs in DB.
+* Saving users' starred songs in DB.
 
-*smart search - by song name, singer, album or lyrocs (if available).
+* smart search - by song name, singer, album or lyrocs (if available).
 
-*shortcuts:
+* shortcuts:
 
 	right/left - move song 10 seconds forward/backward.
 	
