@@ -8,22 +8,36 @@ I have't seen one that does a decent job so here I am. You're more than welcome 
 The API and code must be as tidy and readable as possible.
 
 TASTKS:
-1. make audio AND video playable from a source.
-2. build layout that fits all screen sizes.
-3. integrate audio/video playing into the layout.
-4. search works on any field of file
-5. make shuffle work
-6. make playlist works (playing + social)
-7. append what currently hearing to last activity box
-8. make home tab work similar to youtube main page -- suggested + recently played
-9. make playlist tab work (playlists should work at #6)
-10. rate playlists and show them by rating order
-11. being able to 'like' a song and save it.
-12. saved tab show what saved.
-13. user clickable -- <options>, <log out>
-14. make chat work.
-15. make it being able to integrate in the future to identity based log-on system.
-16. feedback and upload buttons
+
+* שאיבת תמונה, שם שיר ואומן מתיקיית DB.
+
+* dropdown לכפתור יוזר.
+
+* ניגון פלייליסט - אפשר בקלות בעזרת addTextTrack().
+
+* הצגה של הפלייליסט. מספר הtrackים  אשר להשיג בקלות בעזר  textTracks.length
+
+*שמירה בDB שירים שאהבתי.
+
+*חיפוש חכם עפ"י פרמטרים.
+
+* קיצורים - מקלדת 
+	ימינה שמאלה - להזיז זמן בשיר
+	קונטרול ימין שמאל - לקפוץ שיר
+	למעלה למטה - לשנות ווליום ווליום
+	רווח - עצור המשך
+	אלט ד - להתחיל לחפש שיר
+	אלט כ - אהבתי את השיר
+	אלט ר - להתחיל רנדום
+	אנטר - להתחיל לרשום בצ'אט משהו
+
+* scrollbar of chat stays at bottom
+
+* אם נשלח פלייליסט ספציפי - נכנס ספציפית אליו
+
+*מעבר יפה בין טאבים :(
+
+*דיווח על בעיה בשיר כפתור מכרטיסיה (פותח soft-pop-up).
 
 
 
