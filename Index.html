@@ -2,6 +2,7 @@
 <head>
 <link rel="icon" href="favicon2.png" type="image/png" sizes="16x16">
 
+<link href="https://fonts.googleapis.com/css?family=Assistant:400,600,700&amp;subset=hebrew" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -16,7 +17,7 @@
   body {
     background: -webkit-linear-gradient(-65deg, #43C6AC, #F8FFAE);
     background: linear-gradient(-65deg, #43C6AC, #F8FFAE);
-  font-family: Assistant;
+  font-family:  'Assistant';
   margin:0;
   }
   audio::-webkit-media-controls-panel{
@@ -30,20 +31,21 @@
   }
 
   h1{
-  font-family: Assistant !important;
+    font-family: 'Assistant', sans-serif;
   color: #000000 !important;
   font-size: 1.2em !important;
   margin-top:1px !important;
   margin-bottom:1px !important;
   direction: rtl !important;
+  font-weight: 600;
   }
   h2{
-  font-family: Assistant !important;
+  font-family: 'Assistant' !important;
   color: #7c7c7c !important;
-      font-size: 1em !important;
-      margin-top:0px !important;
-      margin-bottom:3px !important;
-          direction: rtl !important;
+  font-size: 1em !important;
+  margin-top:0px !important;
+  margin-bottom:3px !important;
+  direction: rtl !important;
   }
 
   .albumart {
@@ -192,7 +194,7 @@ input[type="radio"]:checked + .icon {
    border: 2px solid #000;
    border-radius: 15px;
    outline: none;
-   font-family: Assistant;
+   font-family:  'Assistant';
 }
 #searchbar:hover{
    border: 2px solid #00601b !important;
@@ -203,7 +205,7 @@ input[type="radio"]:checked + .icon {
      transition-duration: 0.375s;
 }
 #textofsearch{
-font-family: Assistant;
+font-family:  'Assistant';
 font-size: 72px;
 display: inline;
 
@@ -320,18 +322,24 @@ display: inline;
       console.log("MADE ALL BY HAND BY GILAD FEDER.");
 
 function searching(){
+  if ((document.getElementById("searchbar").value==null)||(document.getElementById("searchbar").value=="")||(document.getElementById("searchbar").value==" ")||(document.getElementById("searchbar").value=="הכל")||(document.getElementById("searchbar").value=="all")||(document.getElementById("searchbar").value=="All"))
+    //shows everything
+    document.getElementById("textofsearch").innerHTML = "ריק";
+  else{
+    //shows specific
   document.getElementById("textofsearch").innerHTML = document.getElementById("searchbar").value;
+}
 }
 
 function searchingby(number){
   if(document.querySelector('input[name="radio"]:checked').value==1){
-    document.getElementById("searchingby").innerHTML = "מחפש על-פי אומן";
+    document.getElementById("searchingby").innerHTML = "מציג תוצאות של אומנים";
   }
   if(document.querySelector('input[name="radio"]:checked').value==2){
-    document.getElementById("searchingby").innerHTML = "מחפש על-פי אלבום";
+    document.getElementById("searchingby").innerHTML = "מציג תוצאות של אלבומים";
   }
     if(document.querySelector('input[name="radio"]:checked').value==3){
-    document.getElementById("searchingby").innerHTML = "מחפש על-פי שיר";
+    document.getElementById("searchingby").innerHTML = "מציג תוצאות של שירים";
   }
 }
 
@@ -341,7 +349,7 @@ $(function () {
 
   </script>
 </head>
-<body onhashchange="onloading();" onload="onloading();searchingby();">
+<body onhashchange="onloading();" onload="onloading();searchingby();searching();">
 
 <!-- The site is built from 3 <tr>s, header, body and audioplayer. -->
 <table class="fulltable">
@@ -401,7 +409,7 @@ $(function () {
 <!-- BODY -->
   <tr style="background:rgba(255,255,255,1);"><td width="250" style="border-top: 1px solid #ebebeb;border-right: 1px solid #eceee7;">
 <!-- STALKING AND CHAT -->
-  <table style="font-family:Assistant;" class="fulltable">
+  <table style="font-family: 'Assistant';" class="fulltable">
     <tr><td height="150" style="border-bottom: 1px solid #eceee7;"><div style="direction:rtl;overflow-y:scroll;overflow-wrap:break-word;width:250;height:100%;padding:10px;">גילעד פדר מנגן <b>Perfect Places</b><br>איתי מאירי מנגן <b>YMCA</b></div></td></tr>
     <tr><td><div style="direction:rtl;overflow-y:scroll;overflow-wrap:break-word;width:250;height:100%;padding:10px;"><b style="color:blue;">גילעד פדר:</b> היי.<br><b style="color:green;">איתי מאירי:</b> מה קורה?<br><b style="color:blue;">גילעד פדר:</b> בסדר.</div></td></tr>
     <tr><td height="1"><input id="chatting" style="background: #f0f0f0;direction:rtl;outline: none;border: 1px solid #eceee7;width: 100%;" placeholder="הצטרפ/י לשיחה!" type="text"></td></tr>
@@ -441,10 +449,9 @@ $(function () {
       <div style="margin-right: 40px;"  id="textofsearch"></div>
 
 </td>
-<td style="display:none;" valign="top" id="moviey" bgcolor="white">MOVIE SHIT</td>
-<td style="display:none;" valign="top" id="starry" bgcolor="white">STARRY NIGHT</td>
-<td style="display:none;" valign="top" id="starry" bgcolor="white">STARRY NIGHT</td>
-<td style="display:none;" valign="top" id="playlisty" bgcolor="white">PLAYING SHIT</td>
+<td style="display:none;" valign="top" dir="rtl" id="moviey" bgcolor="white">MOVIES</td>
+<td style="display:none;" valign="top" dir="rtl" id="starry" bgcolor="white">STARRED SONGS</td>
+<td style="display:none;" valign="top" dir="rtl" id="playlisty" bgcolor="white">PLAYLISTS</td>
 <td style="display:table-cell;" id="homey" bgcolor="white">
   <table class="fulltable">
     <tr><td valign="top"><table class="fulltable">
