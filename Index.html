@@ -1,7 +1,7 @@
 <html>
 <head>
-<link rel="icon" href="favicon.png" type="image/png" sizes="16x16">
-
+<link rel="icon" href="favicon2.png" type="image/png" sizes="16x16">
+<title>אמן מוזיקה</title>
   <style>
   a, a:link, a:visited,  a:hover, a:active{
     text-decoration: none !important;
@@ -155,11 +155,11 @@ width:100%;
 .botbutton{
   fill: #5a5a5a;
   cursor: pointer;
-        transition-duration: 0.375s;
+  transition-duration: 0.375s;
 }
 .botbutton:hover{
   fill: #000;
-      transition-duration: 0.375s;
+  transition-duration: 0.375s;
 }
   </style>
   <script>
@@ -172,7 +172,10 @@ width:100%;
       show(2);
     if (location.hash=="#Movie")
       show(3);
+    if (location.hash=="#Search")
+      show(4);
   }
+
   function updateSource(number){
     var playme = document.getElementById('audio');
     playme.src='songs/'+number+'.mp3';
@@ -192,6 +195,7 @@ width:100%;
           document.getElementById("playlisty").style.display="none";
           document.getElementById("starry").style.display="none";
           document.getElementById("moviey").style.display="none";
+          document.getElementById("searchy").style.display="none";
           document.getElementById('hometop').style.fill='#00962a';
           document.getElementById('playlisttop').style.fill='#000';
           document.getElementById('startop').style.fill='#000';
@@ -204,6 +208,7 @@ width:100%;
           document.getElementById("playlisty").style.display="table-cell";
           document.getElementById("starry").style.display="none";
               document.getElementById("moviey").style.display="none";
+              document.getElementById("searchy").style.display="none";
               document.getElementById('hometop').style.fill='#000';
               document.getElementById('playlisttop').style.fill='#00962a';
               document.getElementById('startop').style.fill='#000';
@@ -216,6 +221,7 @@ width:100%;
           document.getElementById("playlisty").style.display="none";
           document.getElementById("starry").style.display="table-cell";
               document.getElementById("moviey").style.display="none";
+              document.getElementById("searchy").style.display="none";
               document.getElementById('hometop').style.fill='#000';
               document.getElementById('playlisttop').style.fill='#000';
               document.getElementById('startop').style.fill='#00962a';
@@ -230,10 +236,25 @@ width:100%;
         document.getElementById("playlisty").style.display="none";
         document.getElementById("starry").style.display="none";
         document.getElementById("moviey").style.display="table-cell";
+        document.getElementById("searchy").style.display="none";
         document.getElementById('hometop').style.fill='#000';
         document.getElementById('playlisttop').style.fill='#000';
         document.getElementById('startop').style.fill='#000';
         document.getElementById('movietop').style.fill='#00962a';
+      }
+      if (nr==4){
+        window.location.hash = 'Search';
+            document.getElementById("theaudiobar").style.display="table-row";
+        document.getElementById("homey").style.display="none";
+        document.getElementById("playlisty").style.display="none";
+        document.getElementById("starry").style.display="none";
+        document.getElementById("searchy").style.display="table-cell";
+        document.getElementById("moviey").style.display="none";
+        document.getElementById('hometop').style.fill='#000';
+        document.getElementById('playlisttop').style.fill='#000';
+        document.getElementById('startop').style.fill='#000';
+        document.getElementById('movietop').style.fill='#000';
+
       }
             document.getElementById('hometop').style.transition = "0.375s";
             document.getElementById('playlisttop').style.transition = "0.375s";
@@ -242,9 +263,10 @@ width:100%;
             document.getElementById('acctop').style.transition = "0.375s";
       }
       console.log("MADE ALL BY HAND BY GILAD FEDER.");
+
   </script>
 </head>
-<body onload="onloading();">
+<body onhashchange="onloading();" onload="onloading();">
 
 <!-- The site is built from 3 <tr>s, header, body and audioplayer. -->
 <table class="fulltable">
@@ -261,7 +283,7 @@ width:100%;
             </svg>
           </div>
           </td>
-          <td width="10%" align="middle"><input size="15" style="background: url(icons/search.svg) no-repeat scroll 159px 1px; padding-right:30px;border: 2px solid #000;border-radius: 15px;outline: none;" type="text" dir="rtl" placeholder="חפש..." name="search"></td>
+          <td width="10%" align="middle"><input size="15"  onclick='show(4);' style="background: url(icons/search.svg) no-repeat scroll 159px 1px; padding-right:30px;border: 2px solid #000;border-radius: 15px;outline: none;" type="text" dir="rtl" placeholder="חפש..." name="search"></td>
           <td></td>
           <td width="10%" align="middle">
 
@@ -302,7 +324,7 @@ width:100%;
   </td></tr>
 <!-- END OF HEADER -->
 <!-- BODY -->
-  <tr style="background:rgba(255,255,255,1);"><td width="250" style="border-right: 1px solid #eceee7;">
+  <tr style="background:rgba(255,255,255,1);"><td width="250" style="border-top: 1px solid #ebebeb;border-right: 1px solid #eceee7;">
 <!-- STALKING AND CHAT -->
   <table style="font-family:Assistant;" class="fulltable">
     <tr><td height="150" style="border-bottom: 1px solid #eceee7;"><div style="direction:rtl;overflow-y:scroll;overflow-wrap:break-word;width:250;height:100%;padding:10px;">גילעד פדר מנגן <b>Perfect Places</b><br>איתי מאירי מנגן <b>YMCA</b></div></td></tr>
@@ -311,6 +333,7 @@ width:100%;
   </table></td>
 <!-- TACHLES -->
 
+<td style="display:none;" valign="top" id="searchy" bgcolor="white">IM SEARCHING</td>
 <td style="display:none;" valign="top" id="moviey" bgcolor="white">MOVIE SHIT</td>
 <td style="display:none;" valign="top" id="starry" bgcolor="white">STARRY NIGHT</td>
 <td style="display:none;" valign="top" id="starry" bgcolor="white">STARRY NIGHT</td>
