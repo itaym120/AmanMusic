@@ -9,6 +9,8 @@ The API and code must be as tidy and readable as possible.
 
 TASTKS:
 
+*adjust to multiple screens - onresize() can help.
+
 *Getting metadata from audiofils
 
 *Dropdown menu for Account (top-left) imgage. (including about, report song problem...)
