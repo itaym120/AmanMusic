@@ -29,6 +29,13 @@
   audio::-webkit-media-controls-timeline::selection{
   background-color: red;
   }
+  .volume .bar.active {
+   border-right-color: #ff0000 !important;
+ }
+ .volume .bar {
+   border-right-color: #ff0000 !important;
+ }
+
 
   h1{
     font-family: 'Assistant', sans-serif;
@@ -190,31 +197,36 @@ input[type="radio"]:checked + .icon {
 }
 #searchbar{
   background: url(icons/search.svg) no-repeat scroll 135px 3px;
-   padding-right:30px;
-   border: 2px solid #000;
-   border-radius: 15px;
-   outline: none;
-   font-family:  'Assistant';
+  padding-right:30px;
+  border: 2px solid #000;
+  border-radius: 15px;
+  outline: none;
+  font-family:  'Assistant';
+    transition-duration: 0.375s;
 }
 #searchbar:hover{
-   border: 2px solid #00601b !important;
-     transition-duration: 0.375s;
+  background: url(icons/searchhover.svg) no-repeat scroll 135px 3px !important;
+  border: 2px solid #00601b !important;
+  transition-duration: 0.375s;
 }
 #searchbar:focus{
-   border: 2px solid #00962a;
-     transition-duration: 0.375s;
+    background: url(icons/searchfocus.svg) no-repeat scroll 135px 3px !important;
+   border: 2px solid #00962a !important;
+  transition-duration: 0.375s;
 }
 #textofsearch{
 font-family:  'Assistant';
 font-size: 72px;
 display: inline;
+margin-right: 40px;
+font-weight: 600;
 
 }
 
   </style>
   <script>
   function onloading(){
-    if (location.hash=="#Home")
+    if ((location.hash=="#Home")||(location.hash==""))
       show(0);
     if (location.hash=="#Playlist")
       show(1);
@@ -252,6 +264,7 @@ display: inline;
           document.getElementById('startop').style.fill='#000';
           document.getElementById('movietop').style.fill='#000';
           document.getElementById('searchbar').style.borderColor ='#000';
+          document.getElementById('searchbar').style.backgroundImage = "url('icons/search.svg')";
         }
         if (nr==1){
           window.location.hash = 'Playlist';
@@ -266,6 +279,7 @@ display: inline;
           document.getElementById('startop').style.fill='#000';
           document.getElementById('movietop').style.fill='#000';
           document.getElementById('searchbar').style.borderColor ='#000';
+          document.getElementById('searchbar').style.backgroundImage = "url('icons/search.svg')";
         }
         if (nr==2){
           window.location.hash = 'Starred';
@@ -280,6 +294,7 @@ display: inline;
           document.getElementById('startop').style.fill='#00962a';
           document.getElementById('movietop').style.fill='#000';
           document.getElementById('searchbar').style.borderColor ='#000';
+          document.getElementById('searchbar').style.backgroundImage = "url('icons/search.svg')";
         }
       if (nr==3){
         window.location.hash = 'Movie';
@@ -296,6 +311,7 @@ display: inline;
         document.getElementById('startop').style.fill='#000';
         document.getElementById('movietop').style.fill='#00962a';
         document.getElementById('searchbar').style.borderColor ='#000';
+        document.getElementById('searchbar').style.backgroundImage = "url('icons/search.svg')";
       }
       if (nr==4){
         window.location.hash = 'Search';
@@ -310,6 +326,8 @@ display: inline;
         document.getElementById('startop').style.fill='#000';
         document.getElementById('movietop').style.fill='#000';
         document.getElementById('searchbar').style.borderColor ='#00962a';
+        document.getElementById('searchbar').style.backgroundImage = "url('icons/searchfocus.svg')";
+
 
       }
             document.getElementById('hometop').style.transition = "0.375s";
@@ -323,12 +341,14 @@ display: inline;
 
 function searching(){
   if ((document.getElementById("searchbar").value==null)||(document.getElementById("searchbar").value=="")||(document.getElementById("searchbar").value==" ")||(document.getElementById("searchbar").value=="הכל")||(document.getElementById("searchbar").value=="all")||(document.getElementById("searchbar").value=="All"))
+  {
     //shows everything
-    document.getElementById("textofsearch").innerHTML = "יציג הכל!";
+     document.getElementById("textofsearch").innerHTML = "יציג הכל!";
+  }
   else{
     //shows specific
   document.getElementById("textofsearch").innerHTML = document.getElementById("searchbar").value;
-}
+  }
 }
 
 function searchingby(number){
@@ -446,7 +466,7 @@ $(function () {
       </li>
   </ul>
       <t style="margin-right: 40px;" id="searchingby"></t><br>
-      <div style="margin-right: 40px;"  id="textofsearch"></div>
+      <r id="textofsearch"></r>
 
 </td>
 <td style="display:none;" valign="top" dir="rtl" id="moviey" bgcolor="white">MOVIES</td>
