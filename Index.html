@@ -202,17 +202,20 @@ input[type="radio"]:checked + .icon {
   border-radius: 15px;
   outline: none;
   font-family:  'Assistant';
-    transition-duration: 0.375s;
+  transition-duration: 0.375s;
+  color: #000000;
 }
 #searchbar:hover{
   background: url(icons/searchhover.svg) no-repeat scroll 135px 3px !important;
   border: 2px solid #00601b !important;
   transition-duration: 0.375s;
+  color: #00601b !important;
 }
 #searchbar:focus{
-    background: url(icons/searchfocus.svg) no-repeat scroll 135px 3px !important;
-   border: 2px solid #00962a !important;
+    background: url(icons/searchfocus.svg) no-repeat scroll 135px 3px;
+   border: 2px solid #00962a;
   transition-duration: 0.375s;
+  color: #00962a;
 }
 #textofsearch{
 font-family:  'Assistant';
@@ -265,6 +268,7 @@ font-weight: 600;
           document.getElementById('movietop').style.fill='#000';
           document.getElementById('searchbar').style.borderColor ='#000';
           document.getElementById('searchbar').style.backgroundImage = "url('icons/search.svg')";
+          document.getElementById('searchbar').style.color ='#000';
         }
         if (nr==1){
           window.location.hash = 'Playlist';
@@ -280,6 +284,7 @@ font-weight: 600;
           document.getElementById('movietop').style.fill='#000';
           document.getElementById('searchbar').style.borderColor ='#000';
           document.getElementById('searchbar').style.backgroundImage = "url('icons/search.svg')";
+          document.getElementById('searchbar').style.color ='#000';
         }
         if (nr==2){
           window.location.hash = 'Starred';
@@ -295,6 +300,7 @@ font-weight: 600;
           document.getElementById('movietop').style.fill='#000';
           document.getElementById('searchbar').style.borderColor ='#000';
           document.getElementById('searchbar').style.backgroundImage = "url('icons/search.svg')";
+          document.getElementById('searchbar').style.color ='#000';
         }
       if (nr==3){
         window.location.hash = 'Movie';
@@ -312,6 +318,7 @@ font-weight: 600;
         document.getElementById('movietop').style.fill='#00962a';
         document.getElementById('searchbar').style.borderColor ='#000';
         document.getElementById('searchbar').style.backgroundImage = "url('icons/search.svg')";
+        document.getElementById('searchbar').style.color ='#000';
       }
       if (nr==4){
         window.location.hash = 'Search';
@@ -327,6 +334,7 @@ font-weight: 600;
         document.getElementById('movietop').style.fill='#000';
         document.getElementById('searchbar').style.borderColor ='#00962a';
         document.getElementById('searchbar').style.backgroundImage = "url('icons/searchfocus.svg')";
+        document.getElementById('searchbar').style.color ='#00962a';
 
 
       }
