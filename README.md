@@ -9,11 +9,11 @@ The API and code must be as tidy and readable as possible.
 
 TASTKS:
 
-*adjust to multiple screens - onresize() can help.
+* Adjust to multiple screens - onresize() can help.
 
-*Getting metadata from audiofils
+* Getting metadata from audiofils
 
-*Dropdown menu for Account (top-left) imgage. (including about, report song problem...)
+* Dropdown menu for Account (top-left) imgage. (including about, report song problem...)
 
 * Playlist - using addTextTrack().
 
