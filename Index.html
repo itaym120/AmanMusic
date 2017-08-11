@@ -376,6 +376,9 @@ function searchingby(number){
     if(document.querySelector('input[name="radio"]:checked').value==3){
     document.getElementById("searchingby").innerHTML = "מציג תוצאות של שירים";
   }
+  if(document.querySelector('input[name="radio"]:checked').value==4){
+  document.getElementById("searchingby").innerHTML = "מציג תוצאות של סרטים";
+}
 }
 
 
@@ -402,11 +405,11 @@ $(function () {
                   <path d="M0 0h24v24H0z" fill="none"/>
               </svg>
               <ul style="text-align: right;" class="dropdown-menu">
-                <li><a data-toggle="modal" data-target="#settings">הגדרות משתמש&nbsp;<span style="margin-right: -14px;" class="glyphicon glyphicon-cog"></span></a></li>
-                <li><a data-toggle="modal" data-target="#songreq">בקשת והעלאת שירים&nbsp;<span style="margin-right: -14px;" class="glyphicon glyphicon-cloud-upload"></span></a></li>
+                <li><a data-toggle="modal" data-target="#settings"><text  style="margin-right: 10px;">הגדרות משתמש&nbsp;</text><img style="margin-right: -10px;vertical-align: text-top;" src="icons/settings.png"></a></li>
+                <li><a data-toggle="modal" data-target="#songreq"><text  style="margin-right: 10px;">בקשת והעלאת שירים&nbsp;</text><img style="margin-right: -10px;vertical-align: text-top;" src="icons/upload.png"></a></li>
                 <li class="divider"></li>
-                <li><a data-toggle="modal" data-target="#feedback">פידבק והערות&nbsp;<span style="margin-right: -14px;" class="glyphicon glyphicon-envelope"></span></a></li>
-                <li><a data-toggle="modal" data-target="#about">אודות&nbsp;<span style="margin-right: -14px;" class="glyphicon glyphicon-info-sign"></span></a></li>
+                <li><a data-toggle="modal" data-target="#feedback"><text  style="margin-right: 10px;">פידבק והערות&nbsp;</text><img style="margin-right: -10px;vertical-align: text-top;" src="icons/feedback.png"></a></li>
+                <li><a data-toggle="modal" data-target="#about"><text  style="margin-right: 10px;">אודות&nbsp;</text><img style="margin-right: -10px;vertical-align: text-top;" src="icons/about.png"></a></li>
               </ul>
             </div>
           </td>
@@ -486,6 +489,15 @@ $(function () {
                     <path d="M0 0h24v24H0z" fill="none"/>
                     <path d="M12 3v9.28c-.47-.17-.97-.28-1.5-.28C8.01 12 6 14.01 6 16.5S8.01 21 10.5 21c2.31 0 4.2-1.75 4.45-4H15V6h4V3h-7z"/>
                 </svg>
+        </label>
+      </li>
+      <li class="lisearch">
+        <label for='radio4' data-toggle="tooltip" data-placement="bottom" title="סרט">
+        <input onclick="searchingby();" type='radio' value='4' name='radio'  id='radio4'/>
+        <svg class="icon" fill="#acacac" height="34" viewBox="0 0 24 24" width="34">
+          <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/>
+          <path d="M0 0h24v24H0z" fill="none"/>
+        </svg>
         </label>
       </li>
   </ul>
@@ -812,11 +824,14 @@ $(function () {
                   <h4 class="modal-title">אודות</h4>
                 </div>
                 <div class="modal-body">
-                  <p>האתר נוצר לטובת כלל אנשי אמ"ן -- לעשות את עבודתם על הצד הטוב ביותר לצד מוזיקה, דבר שמשפר את אפקטיביות העבודה והאווירה</p>
+                  <table width="100%"><tr><td width="100%" align="center">  <img height="100"  class="img-circle" src="logo.png"></td></tr><tr><td height="20"></td></tr>
+                  <tr><td align="center" style="font-size:14px;">                  <p> האתר נוצר לטובת אנשי אמ"ן. מוזיקה הוא חלק מרכזי וחשוב בחיים, וכשמשלבים עבודה ומוזיקה, מקבלים אווירה טובה ועבודה טובה ואפקטיביות.</p></td></tr><tr><td align="center" style="font-size:14px; color:grey; "><q>חייל שטוב לו - יעשה עבודה טובה</q></td></tr></table>
+
                   <hr/>
-                  <p>האתר נהגה ועלה בגירסאותיו הראשונות על ידי איתי מאירי. האתר בראשיתו היה מבוסס על האתר האזרחי subsonic.</p>
-                  <p>מיד לאחר צאת האתר לאוויר, הצטרף לצוות המפתח, גילעד פדר. גירסא זו של האתר פותחה על ידו - הן בצד שרת והן בצד משתמש. תצורה זו בשימוש כעת.</p><br>
-                  <table width="60%" style="border-spacing: 30px;" align="center"><tr><td align="center"><figure class="figure"><img src="itay.png" height="100" class="img-circle"><figcaption align="center" class="figure-caption">איתי מאירי</figcaption></figure></td><td align="center"><figure class="figure"><img src="gilad.png" height="100" class="img-circle"><figcaption align="center" class="figure-caption">גילעד פדר</figcaption></figure></td><td align="center"><figure class="figure"><img src="yaniv.png" height="100" class="img-circle"><figcaption align="center" class="figure-caption">יניב כהן</figcaption></figure></td></tr></table>
+                  <p>האתר נהגה ועלה בגירסאותיו הראשונות על ידי איתי מאירי. האתר בראשיתו היה מבוסס על האתר האזרחי subsonic. גם השרתים והתחזוקה בידיו.</p>
+                  <p>מיד לאחר צאת האתר לאוויר, הצטרף לצוות גילעד פדר. גירסא זו של האתר פותחה על ידו - הן בצד שרת והן בצד משתמש. תצורה זו בשימוש כעת. </p>
+                  <p>וכמובן תודה ענקית לכם שאתם משתמשים בפלטפורמה!</p>
+                  <table height="160" width="60%" style="border-spacing: 30px;font-size: 14px; color: grey;" align="center"><tr><td align="center"><figure class="figure"><img src="itay.png" height="100" class="img-circle"><figcaption align="center" class="figure-caption">איתי מאירי</figcaption></figure></td><td align="center"><figure class="figure"><img src="gilad.png" height="100" class="img-circle"><figcaption align="center" class="figure-caption">גילעד פדר</figcaption></figure></td><td align="center"><figure class="figure"><img src="yaniv.png" height="100" class="img-circle"><figcaption align="center" class="figure-caption">יניב כהן</figcaption></figure></td></tr></table>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default pull-left" data-dismiss="modal">סגור</button>
