@@ -9,6 +9,8 @@ The API and code must be as tidy and readable as possible.
 
 TASTKS:
 
+* Random color generator for chat (generate random hex color in javascript: '#' + ("000000" + Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6); )
+
 * Adjust to multiple screens - onresize() can help.
 
 * Getting metadata from audiofils
