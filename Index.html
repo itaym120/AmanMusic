@@ -231,10 +231,32 @@ font-weight: 600;
   display: inline-block;
 }
 .keyspace{
-  padding-bottom: 16px;
+  line-height: 50px;
 }
+
+  .input-color-container {
+    position: relative;
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+    border: solid 2px #ddd;
+    border-radius: 40px;
+      white-space: nowrap;
+  }
+
+  .input-color {
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    width: 56px;
+    height: 56px;
+    border: none;
+    cursor: pointer;
+  }
+
   </style>
   <script>
+
   function onloading(){
     if ((location.hash=="#Home")||(location.hash==""))
       show(0);
@@ -405,11 +427,11 @@ $(function () {
                   <path d="M0 0h24v24H0z" fill="none"/>
               </svg>
               <ul style="text-align: right;" class="dropdown-menu">
-                <li><a data-toggle="modal" data-target="#settings"><text  style="margin-right: 10px;">הגדרות משתמש&nbsp;</text><img style="margin-right: -10px;vertical-align: text-top;" src="icons/settings.png"></a></li>
-                <li><a data-toggle="modal" data-target="#songreq"><text  style="margin-right: 10px;">בקשת והעלאת שירים&nbsp;</text><img style="margin-right: -10px;vertical-align: text-top;" src="icons/upload.png"></a></li>
+                <li><a data-toggle="modal" data-target="#settings"><text  style="margin-right: 7px;">הגדרות משתמש&nbsp;</text><img style="margin-right: -10px;vertical-align: text-top;" src="icons/settings.png"></a></li>
+                <li><a data-toggle="modal" data-target="#songreq"><text  style="margin-right: 7px;">בקשת והעלאת שירים&nbsp;</text><img style="margin-right: -10px;vertical-align: text-top;" src="icons/upload.png"></a></li>
                 <li class="divider"></li>
-                <li><a data-toggle="modal" data-target="#feedback"><text  style="margin-right: 10px;">פידבק והערות&nbsp;</text><img style="margin-right: -10px;vertical-align: text-top;" src="icons/feedback.png"></a></li>
-                <li><a data-toggle="modal" data-target="#about"><text  style="margin-right: 10px;">אודות&nbsp;</text><img style="margin-right: -10px;vertical-align: text-top;" src="icons/about.png"></a></li>
+                <li><a data-toggle="modal" data-target="#feedback"><text  style="margin-right: 7px;">פידבק והערות&nbsp;</text><img style="margin-right: -10px;vertical-align: text-top;" src="icons/feedback.png"></a></li>
+                <li><a data-toggle="modal" data-target="#about"><text  style="margin-right: 7px;">אודות&nbsp;</text><img style="margin-right: -10px;vertical-align: text-top;" src="icons/about.png"></a></li>
               </ul>
             </div>
           </td>
@@ -730,8 +752,13 @@ $(function () {
           </div>
           <div class="modal-body">
             <br><p><b>שם תצוגה :</b> גילעד פדר</p>
+            <table style="font-size: 14px;" border="0">
+              <tr><td><b>צבע תצוגה לצ'אט:</b>&nbsp;&nbsp;</td><td><div class="input-color-container">
+                  <input id="input-color" value="#ff0000" class="input-color" type="color">
+                </div></td></tr>
+            </table><br>
             <p><b>קיצורי מקלדת:</b></p>
-            <table style="margin-right: 30px;" width="400" border="0">
+            <table  valign="bottom" style="margin-right: 50px;font-size: 14px;" width="400" border="0">
               <tr><td class="keyspace">קפיצה קדימה/אחורה ב-10 שניות</td><td><div class="keyshortcut">→</div> <div class="keyshortcut">←</div></td></tr>
               <tr><td class="keyspace">קפיצה לשיר הבא/הקודם</td><td><div class="keyshortcut">→</div> <div class="keyshortcut">←</div> + <div class="keyshortcut">ctrl</div></td></tr>
               <tr><td class="keyspace">הגברת/הנמכת עוצמת שמע</td><td><div class="keyshortcut">↑</div> <div class="keyshortcut">↓</div></td></tr>
@@ -747,7 +774,7 @@ $(function () {
             <p></p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">סגור</button>  <div class="btn btn-danger pull-right">אפס נתוני משתמש</div>
+            <button type="button" style="outline: none;" class="btn btn-default pull-left" data-dismiss="modal">סגור</button>  <div class="btn btn-danger pull-right">אפס נתוני משתמש</div>
           </div>
         </div>
       </div>
@@ -776,20 +803,20 @@ $(function () {
                 <div class="form-group">
                   <label for="exampleInputEmail1">שם שיר</label>
                   <input type="text" class="form-control" id="ArtistName" aria-describedby="emailHelp" placeholder="הזן את שם השיר...">
-                  <small id="emailHelp" class="form-text text-muted">אנא הזן שם שיר אחד או הפרד בינהם בעזרת פסיק</small>
+                  <small id="emailHelp" class="form-text text-muted">הפרד בפסיקים שירים שונים; לאלבום שלם השאר את הקטגוריה ריקה</small>
                 </div>
                 <hr />
-                <h4 style="font-weight: bold !important;">העלאת שיר</h4>
+                <h4 style="font-weight: bold !important;">העלאת שירים</h4>
                 <div class="form-group">
-                    <label for="exampleInputFile">בחירת קובץ</label>
-                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                    <label for="exampleInputFile">בחירת קבצים</label>
+                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" multiple>
                     <small id="fileHelp" class="form-text text-muted">השתדל להעלות עם כלל המידע בתגיות התואמות</small>
                   </div>
               </form>
             </div>
 
             <div class="modal-footer">
-              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">סגור</button>  <div class="btn btn-success pull-right">שלח</div>
+              <button type="button" style="outline: none;"  class="btn btn-default pull-left" data-dismiss="modal">סגור</button>  <div class="btn btn-success pull-right">שלח</div>
             </div>
           </div>
         </div>
@@ -804,13 +831,13 @@ $(function () {
               </div>
               <div class="modal-body">
                 <div class="form-group">
-    <label for="exampleTextarea">הזן את חוות הדעת</label>
-    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-  </div>
-<p>ניתן גם <a style="text-decoration: underline !important;" href="mailto:ad@dom.il">לשלוח מייל לצוות האתר</a>.</p>
+                  <label for="exampleTextarea">הזן את חוות הדעת</label>
+                  <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                </div>
+                <p>ניתן גם <a style="text-decoration: underline !important;" href="mailto:ad@dom.il">לשלוח מייל לצוות האתר</a>.</p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">סגור</button> <div class="btn btn-success pull-right">שלח</div>
+                <button type="button" style="outline: none;"  class="btn btn-default pull-left" data-dismiss="modal">סגור</button> <div class="btn btn-success pull-right">שלח</div>
               </div>
             </div>
           </div>
@@ -834,7 +861,7 @@ $(function () {
                   <table height="160" width="60%" style="border-spacing: 30px;font-size: 14px; color: grey;" align="center"><tr><td align="center"><figure class="figure"><img src="itay.png" height="100" class="img-circle"><figcaption align="center" class="figure-caption">איתי מאירי</figcaption></figure></td><td align="center"><figure class="figure"><img src="gilad.png" height="100" class="img-circle"><figcaption align="center" class="figure-caption">גילעד פדר</figcaption></figure></td><td align="center"><figure class="figure"><img src="yaniv.png" height="100" class="img-circle"><figcaption align="center" class="figure-caption">יניב כהן</figcaption></figure></td></tr></table>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">סגור</button>
+                  <button type="button" style="outline: none;"  class="btn btn-default pull-left" data-dismiss="modal">סגור</button>
                 </div>
               </div>
             </div>
