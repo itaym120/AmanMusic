@@ -400,7 +400,18 @@ function searchingby(number){
   }
   if(document.querySelector('input[name="radio"]:checked').value==4){
   document.getElementById("searchingby").innerHTML = "מציג תוצאות של סרטים";
+  }
 }
+
+function randchatcolor(){
+  var letters = '012345'.split('');
+  var color = '#';
+  color += letters[Math.round(Math.random() * 5)];
+  letters = '0123456789ABCDEF'.split('');
+  for (var i = 0; i < 5; i++) {
+    color += letters[Math.round(Math.random() * 15)];
+  }
+  document.getElementById("input-color").value = color;
 }
 
 
@@ -410,7 +421,7 @@ $(function () {
 
   </script>
 </head>
-<body onhashchange="onloading();" onload="onloading();searchingby();searching();">
+<body onhashchange="onloading();" onload="onloading();searchingby();searching();randchatcolor();">
 
 <!-- The site is built from 3 <tr>s, header, body and audioplayer. -->
 <table class="fulltable">
@@ -764,7 +775,7 @@ $(function () {
               <tr><td class="keyspace">הגברת/הנמכת עוצמת שמע</td><td><div class="keyshortcut">↑</div> <div class="keyshortcut">↓</div></td></tr>
               <tr><td class="keyspace">עצור/המשך שיר</td><td><div style="width: 63px !important;" class="keyshortcut">⎵</div></td></tr>
               <tr><td class="keyspace">התחל לרשום בצ'אט</td><td><div style="width: 63px !important;" class="keyshortcut">↲</div></td></tr>
-              <tr><td class="keyspace">חפש</td><td><div class="keyshortcut">s</div> + <div class="keyshortcut">alt</div></td></tr>
+              <tr><td class="keyspace">קפיצה לשורת החיפוש</td><td><div class="keyshortcut">f</div> + <div class="keyshortcut">alt</div></td></tr>
               <tr><td class="keyspace">סמן בכוכב את השיר המנוגן כעת</td><td><div class="keyshortcut">d</div> + <div class="keyshortcut">alt</div></td></tr>
               <tr><td class="keyspace">התחל לנגן מוזיקה אקראית</td><td><div class="keyshortcut">r</div> + <div class="keyshortcut">alt</div></td></tr>
 
