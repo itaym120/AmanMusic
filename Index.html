@@ -167,8 +167,6 @@
   transition-duration: 0.375s;
 }
 
-
-
 .botbuttonsgrey{
   fill: #f5f5f5;
 }
@@ -182,20 +180,8 @@
   transition-duration: 0.375s;
 }
 
-.lisearch {
-    display: inline-block;
-    margin-left: 30px;
-    margin-top: 20px;
-}
-
-input[type="radio"] {
-display:none;
-}
 svg {
     cursor: pointer;
-}
-.icon{
-    transition-duration: 0.35s;
 }
 input[type="radio"]:checked + .icon {
     fill: #000000;
@@ -223,7 +209,7 @@ input[type="radio"]:checked + .icon {
   transition-duration: 0.375s;
   color: #00962a;
 }
-#textofsearch{
+.textofsearch{
 font-family:  'Assistant';
 font-size: 72px;
 display: inline;
@@ -266,7 +252,6 @@ font-weight: 600;
     border: none;
     cursor: pointer;
   }
-
   </style>
   <script>
 
@@ -393,28 +378,17 @@ function searching(){
   if ((document.getElementById("searchbar").value==null)||(document.getElementById("searchbar").value=="")||(document.getElementById("searchbar").value==" ")||(document.getElementById("searchbar").value=="הכל")||(document.getElementById("searchbar").value=="all")||(document.getElementById("searchbar").value=="All"))
   {
     //shows everything
-     document.getElementById("textofsearch").innerHTML = "יציג הכל!";
+    document.getElementsByClassName("textofsearch")[0].innerHTML= "מציג הכל!";
+    document.getElementsByClassName("textofsearch")[1].innerHTML= "מציג הכל!";
+
   }
   else{
     //shows specific
-  document.getElementById("textofsearch").innerHTML = document.getElementById("searchbar").value;
+  document.getElementsByClassName("textofsearch")[0].innerHTML = document.getElementById("searchbar").value;
+  document.getElementsByClassName("textofsearch")[1].innerHTML = document.getElementById("searchbar").value;
   }
 }
 
-function searchingby(number){
-  if(document.querySelector('input[name="radio"]:checked').value==1){
-    document.getElementById("searchingby").innerHTML = "מציג תוצאות של אומנים";
-  }
-  if(document.querySelector('input[name="radio"]:checked').value==2){
-    document.getElementById("searchingby").innerHTML = "מציג תוצאות של אלבומים";
-  }
-    if(document.querySelector('input[name="radio"]:checked').value==3){
-    document.getElementById("searchingby").innerHTML = "מציג תוצאות של שירים";
-  }
-  if(document.querySelector('input[name="radio"]:checked').value==4){
-  document.getElementById("searchingby").innerHTML = "מציג תוצאות של סרטים";
-  }
-}
 
 function randchatcolor(){
   var letters = '012345'.split('');
@@ -495,7 +469,7 @@ function resizing() {
 }
   </script>
 </head>
-<body onhashchange="onloading();" onresize="resizing();"  onload="onloading();searchingby();searching();randchatcolor();resizing();">
+<body onhashchange="onloading();" onresize="resizing();"  onload="onloading();searching();randchatcolor();resizing();">
 
 <!-- The site is built from 3 <tr>s, header, body and audioplayer. -->
 <table class="fulltable">
@@ -571,45 +545,12 @@ function resizing() {
 <!-- TACHLES -->
 
 <td style="display:none;" valign="top" dir="rtl" id="searchy" bgcolor="white">
-  <ul>
-      <li class="lisearch">
-        <label for='radio1' data-toggle="tooltip" data-placement="bottom" title="אומן">
-          <input onclick="searchingby();" type='radio' value='1' name='radio' id='radio1' checked="checked">
-          <svg id="hello" class="icon"  fill="#acacac" height="34" viewBox="0 0 24 24" width="34">
-              <path d="M0 0h24v24H0z" fill="none"/>
-              <path d="M21 5v14h2V5h-2zm-4 14h2V5h-2v14zM14 5H2c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V6c0-.55-.45-1-1-1zM8 7.75c1.24 0 2.25 1.01 2.25 2.25S9.24 12.25 8 12.25 5.75 11.24 5.75 10 6.76 7.75 8 7.75zM12.5 17h-9v-.75c0-1.5 3-2.25 4.5-2.25s4.5.75 4.5 2.25V17z"/>
-          </svg></label>
-      </li>
-      <li class="lisearch">
-        <label for='radio2' data-toggle="tooltip" data-placement="bottom" title="אלבום">
-          <input onclick="searchingby();" type='radio' value='2' name='radio'  id='radio2'/>
-            <svg class="icon" fill="#acacac" height="34" viewBox="0 0 24 24" width="34">
-              <path d="M0 0h24v24H0z" fill="none"/>
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14.5c-2.49 0-4.5-2.01-4.5-4.5S9.51 7.5 12 7.5s4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5zm0-5.5c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/>
-          </svg>
-        </label>
-      </li>
-      <li class="lisearch">
-        <label for='radio3' data-toggle="tooltip" data-placement="bottom" title="שיר">
-          <input onclick="searchingby();" type='radio' value='3' name='radio'  id='radio3'/>
-            <svg class="icon" fill="#acacac" height="34" viewBox="0 0 24 24" width="34">
-                    <path d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M12 3v9.28c-.47-.17-.97-.28-1.5-.28C8.01 12 6 14.01 6 16.5S8.01 21 10.5 21c2.31 0 4.2-1.75 4.45-4H15V6h4V3h-7z"/>
-                </svg>
-        </label>
-      </li>
-      <li class="lisearch">
-        <label for='radio4' data-toggle="tooltip" data-placement="bottom" title="סרט">
-        <input onclick="searchingby();" type='radio' value='4' name='radio'  id='radio4'/>
-        <svg class="icon" fill="#acacac" height="34" viewBox="0 0 24 24" width="34">
-          <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/>
-          <path d="M0 0h24v24H0z" fill="none"/>
-        </svg>
-        </label>
-      </li>
-  </ul>
-      <t style="margin-right: 40px;" id="searchingby"></t><br>
-      <r id="textofsearch"></r>
+  <table align="center" style="width: 100%;height:100%" border="0">
+<tr height="56" bgcolor="#efefef"><td align="center"><svg style="cursor:default !important;" data-toggle="tooltip" data-placement="bottom" title="מוזיקה" fill="#393939" height="48" viewBox="0 0 24 24" width="48"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 3v9.28c-.47-.17-.97-.28-1.5-.28C8.01 12 6 14.01 6 16.5S8.01 21 10.5 21c2.31 0 4.2-1.75 4.45-4H15V6h4V3h-7z"/></svg></td></tr>
+<tr><td align="center"><r class="textofsearch"></r></td></tr>
+<tr height="56" bgcolor="#efefef"><td align="center"><svg style="cursor:default !important;" data-toggle="tooltip" data-placement="bottom" title="סרטים" fill="#393939" height="48" viewBox="0 0 24 24" width="48"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/><path d="M0 0h24v24H0z" fill="none"/></svg><td></tr>
+<tr><td align="center"><r class="textofsearch"></r></td></tr>
+  </table>
 
 </td>
 <td style="display:none;" valign="top" dir="rtl" id="moviey" bgcolor="white">MOVIES</td>
