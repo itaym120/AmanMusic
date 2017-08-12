@@ -8,6 +8,7 @@ I have't seen one that does a decent job so here I am. You're more than welcome 
 The API and code must be as tidy and readable as possible.
 
 TASTKS:
+* Trim to a square non-square album images.
 
 * Sending forms to right DBs.
 
