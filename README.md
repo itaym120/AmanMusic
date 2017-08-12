@@ -9,6 +9,8 @@ The API and code must be as tidy and readable as possible.
 
 TASTKS:
 
+* Make a way that saved songs and playlists (and movies?) don't overflow and take more than screen width and height.
+
 * Trim to a square non-square album images.
 
 * Sending forms to right DBs.
