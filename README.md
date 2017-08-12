@@ -8,15 +8,12 @@ I have't seen one that does a decent job so here I am. You're more than welcome 
 The API and code must be as tidy and readable as possible.
 
 TASTKS:
+
 * Trim to a square non-square album images.
 
 * Sending forms to right DBs.
 
-* Adjust to multiple screens - onresize() can help.
-
-* Getting metadata from audiofils
-
-* Dropdown menu for Account (top-left) imgage. (including about, report song problem...)
+* Getting metadata from audiofiles
 
 * Playlist - using addTextTrack().
 
@@ -24,7 +21,7 @@ TASTKS:
 
 * Saving users' starred songs in DB.
 
-* smart search - by song name, singer, album or lyrocs (if available).
+* smart search - by song name, singer, album or lyrics (if available).
 
 * shortcuts:
 
@@ -46,9 +43,9 @@ TASTKS:
 	
 * keeping scrollbar of chat at bottom
 
-* unique url for playlists - and entering to the specific one if entered in url bar.
+* unique hash url for playlists - and entering to the specific one if entered in url bar.
 
-* pretty css transition between tabs.
+* quick-pretty css transition between tabs. (maybe not?)
 
 
 Thanks for reading and participating!
