@@ -252,6 +252,15 @@ font-weight: 600;
     border: none;
     cursor: pointer;
   }
+  #bodyofsongresults{
+        height: 50%;
+        transition: height 0.3s;
+  }
+  #bodyofmovieresults{
+            height: 50%;
+        transition: height 0.3s;
+  }
+
   </style>
   <script>
 
@@ -467,6 +476,26 @@ function resizing() {
       }
     }
 }
+var flag=false;
+function makebiggerandsmaller(searchfocus){
+if (flag){ //if was clicked once already
+  document.getElementById('bodyofsongresults').style.height="50%";
+  document.getElementById('bodyofmovieresults').style.height="50%";
+  flag=false;
+}
+else{
+  if (searchfocus==1){
+    document.getElementById('bodyofsongresults').style.height="100%";
+    document.getElementById('bodyofmovieresults').style.height="0";
+    flag = true;
+  }
+  if (searchfocus==2){
+    document.getElementById('bodyofsongresults').style.height="0";
+    document.getElementById('bodyofmovieresults').style.height="100%";
+    flag = true;
+  }
+}
+}
   </script>
 </head>
 <body onhashchange="onloading();" onresize="resizing();"  onload="onloading();searching();randchatcolor();resizing();">
@@ -546,10 +575,10 @@ function resizing() {
 
 <td style="display:none;" valign="top" dir="rtl" id="searchy" bgcolor="white">
   <table align="center" style="width: 100%;height:100%" border="0">
-<tr height="56" bgcolor="#efefef"><td align="center"><svg style="cursor:default !important;" data-toggle="tooltip" data-placement="bottom" title="מוזיקה" fill="#393939" height="48" viewBox="0 0 24 24" width="48"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 3v9.28c-.47-.17-.97-.28-1.5-.28C8.01 12 6 14.01 6 16.5S8.01 21 10.5 21c2.31 0 4.2-1.75 4.45-4H15V6h4V3h-7z"/></svg></td></tr>
-<tr><td align="center"><r class="textofsearch"></r></td></tr>
-<tr height="56" bgcolor="#efefef"><td align="center"><svg style="cursor:default !important;" data-toggle="tooltip" data-placement="bottom" title="סרטים" fill="#393939" height="48" viewBox="0 0 24 24" width="48"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/><path d="M0 0h24v24H0z" fill="none"/></svg><td></tr>
-<tr><td align="center"><r class="textofsearch"></r></td></tr>
+<tr id="headofsongresults" onclick="makebiggerandsmaller(1);" height="56" bgcolor="#efefef"><td align="center"><svg data-toggle="tooltip" data-placement="bottom" title="מוזיקה" fill="#393939" height="48" viewBox="0 0 24 24" width="48"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 3v9.28c-.47-.17-.97-.28-1.5-.28C8.01 12 6 14.01 6 16.5S8.01 21 10.5 21c2.31 0 4.2-1.75 4.45-4H15V6h4V3h-7z"/></svg></td></tr>
+<tr id="bodyofsongresults"><td align="center"><r class="textofsearch"></r></td></tr>
+<tr id="headofmovieresults" onclick="makebiggerandsmaller(2);" height="56" bgcolor="#efefef"><td align="center"><svg data-toggle="tooltip" data-placement="bottom" title="סרטים" fill="#393939" height="48" viewBox="0 0 24 24" width="48"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/><path d="M0 0h24v24H0z" fill="none"/></svg><td></tr>
+<tr id="bodyofmovieresults"><td align="center"><r class="textofsearch"></r></td></tr>
   </table>
 
 </td>
@@ -873,7 +902,7 @@ function resizing() {
                   <tr><td align="center" style="font-size:14px;">                  <p> האתר נוצר לטובת אנשי אמ"ן. מוזיקה היא חלק מרכזי וחשוב בחיים, וכשמשלבים עבודה ומוזיקה, מקבלים אווירה טובה ועבודה טובה ואפקטיבית.</p></td></tr><tr><td align="center" style="font-size:14px; color:grey; "><q>חייל שטוב לו - יום טוב לו</q></td></tr>
 				  <tr><td align="center" style="font-size:14px;">          <p> גבי אשכנזי, 2011</p></td></tr>
 				  </table>
-					
+
                   <hr/>
                   <p>תודה רבה לכל התורמים למלאכה:</p>
                   <p>איתי מאירי, הבעלים וההוגה</p>
