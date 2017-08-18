@@ -331,7 +331,7 @@ font-weight: 600;
   border-radius: 50px;
   box-shadow: 0px 2px 5px #ababab;
   top: 40px;
-  left: 20px;
+  left: 15px;
 }
 .dice {
   display: inline-block;
@@ -340,7 +340,7 @@ font-weight: 600;
   height: 48px;
   width: 48px;
   text-align: center;
-  padding: 12px 0;
+  padding: 8px 0;
   fill: #ababab;
     transition-duration: 0.25s;
 }
@@ -697,7 +697,7 @@ function loadingding() {
     <td height="60" align="center">
       <font style="font-size: 120px;line-height: 20px;">
   AMAN MUSIC</font><br>
-  <font style="font-size: 20px; word-spacing: 20px;line-height: 20px;">
+  <font style="font-size: 20px; word-spacing: 5px;line-height: 20px;">
   פלטפורמת מוזיקה וסרטים</font><br><br>
 </td></tr>
 <tr><td height="1" align="center"><img src="pictures/load.gif" class="img-circle"></td></tr>
@@ -781,8 +781,12 @@ function loadingding() {
 <!-- TACHLES -->
 <!-- 404 ERROR -->
 
-<td style="display: none;animation: fadeIn 1s;" valign="middle" align="center" dir="rtl" id="error" bgcolor="white">
-  <img width="100%" src="pictures/404.png">
+<td style="display: none;animation: fadeIn 1s;"  dir="rtl" id="error" bgcolor="white">
+  <table class="fulltable">
+    <tr><td valign="bottom" align="center" style="font-size: 120px;" dir="ltr" height="50%">Sorry...</td></tr>
+    <tr><td align="center" style="font-size: 30px;" height="1">לא נמצא העמוד המתאים.</td></tr>
+    <tr><td valign="bottom" align="right"><img  style="height: 400px;" src="pictures/404.jpg"></td></tr>
+</table>
 </td>
 
 <!-- END OF 404 ERROR -->
@@ -924,7 +928,7 @@ function loadingding() {
 <td style="display:table-cell;animation: fadeIn 1s;" id="homey" bgcolor="white">
   <a onclick="updateSource(1);" class="button">
   <span class="dice">
-<svg height="24" viewBox="0 0 24 24" width="24">
+<svg height="32" viewBox="0 0 24 24" width="32">
     <path d="M0 0h24v24H0zm21.02 19c0 1.1-.9 2-2 2h-14c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v14z" fill="none"/>
     <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM7.5 18c-.83 0-1.5-.67-1.5-1.5S6.67 15 7.5 15s1.5.67 1.5 1.5S8.33 18 7.5 18zm0-9C6.67 9 6 8.33 6 7.5S6.67 6 7.5 6 9 6.67 9 7.5 8.33 9 7.5 9zm4.5 4.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5 4.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm0-9c-.83 0-1.5-.67-1.5-1.5S15.67 6 16.5 6s1.5.67 1.5 1.5S17.33 9 16.5 9z"/>
 </svg></span>
