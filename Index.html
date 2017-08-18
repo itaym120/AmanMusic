@@ -553,7 +553,7 @@ function resizing() {
     var w = window.outerWidth;
     var h = window.outerHeight;
 
-    if ((w<=1900)||(h<=758)){ //if screen size is too small
+    if ((w<=1430)||(h<=758)){ //if screen size is too small
       for (var i=0; i<10 ; i++) //loops through all elements (10 in homescreen)
       {
         //widths and heights of elements
@@ -562,11 +562,15 @@ function resizing() {
         document.getElementsByClassName('card')[i].style.width = "115px";
         document.getElementsByClassName('card')[i].style.height = "115px";
         document.getElementsByClassName('overflowing')[i].style.width = "115px";
+        document.getElementsByClassName('movcardphoto')[i].style.width = "115px";
+        document.getElementsByClassName('movcard')[i].style.width = "115px";
+        document.getElementsByClassName('movoverflowing')[i].style.width = "115px";
 
         //button icons sizes
         document.getElementsByClassName('play')[i].style.width= "60px";
         document.getElementsByClassName('playlist')[i].style.width= "24px";
         document.getElementsByClassName('star')[i].style.width= "24px";
+        document.getElementsByClassName('movplay')[i].style.width= "60px";
 
         //buttons icons location
         document.getElementsByClassName('playit')[i].style.top= "-3px";
@@ -575,10 +579,14 @@ function resizing() {
         document.getElementsByClassName('loveit')[i].style.left= "3px";
         document.getElementsByClassName('playlistit')[i].style.top= "42px";
         document.getElementsByClassName('playlistit')[i].style.left= "88px";
+        document.getElementsByClassName('movplayit')[i].style.top= "25px";
+        document.getElementsByClassName('movplayit')[i].style.left= "27px";
 
         //font sizes
         document.getElementsByClassName('songname')[i].style.fontSize= "0.6em";
         document.getElementsByClassName('artistname')[i].style.fontSize= "0.5em";
+        document.getElementsByClassName('movname')[i].style.fontSize= "0.6em";
+        document.getElementsByClassName('movgenre')[i].style.fontSize= "0.5em";
       }
     }
     else{ //if screen size is good OR if it was too small and reverted back to normal.
@@ -590,11 +598,15 @@ function resizing() {
         document.getElementsByClassName('card')[i].style.width = "230px";
         document.getElementsByClassName('card')[i].style.height = "230px";
         document.getElementsByClassName('overflowing')[i].style.width = "230px";
+        document.getElementsByClassName('movcardphoto')[i].style.width = "230px";
+        document.getElementsByClassName('movcard')[i].style.width = "230px";
+        document.getElementsByClassName('movoverflowing')[i].style.width = "230px";
 
         //button icons sizes
         document.getElementsByClassName('play')[i].style.width= "120px";
         document.getElementsByClassName('playlist')[i].style.width= "36px";
         document.getElementsByClassName('star')[i].style.width= "36px";
+        document.getElementsByClassName('movplay')[i].style.width= "120px";
 
         //buttons icons location
         document.getElementsByClassName('playit')[i].style.top= "55px";
@@ -603,10 +615,14 @@ function resizing() {
         document.getElementsByClassName('loveit')[i].style.left= "16px";
         document.getElementsByClassName('playlistit')[i].style.top= "100px";
         document.getElementsByClassName('playlistit')[i].style.left= "180px";
+        document.getElementsByClassName('movplayit')[i].style.top= "102px";
+        document.getElementsByClassName('movplayit')[i].style.left= "55px";
 
         //font sizes
         document.getElementsByClassName('songname')[i].style.fontSize= "inherit";
         document.getElementsByClassName('artistname')[i].style.fontSize= "inherit";
+        document.getElementsByClassName('movname')[i].style.fontSize= "inherit";
+        document.getElementsByClassName('movgenre')[i].style.fontSize= "inherit";
       }
     }
 }
@@ -674,7 +690,7 @@ function loadingding() {
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
                   <path d="M0 0h24v24H0z" fill="none"/>
               </svg>
-              <ul style="text-align: right;" class="dropdown-menu">
+              <ul style="text-align: right;animation: fadeIn 0.325s;" class="dropdown-menu">
                 <li><a data-toggle="modal" data-target="#settings"><text style="margin-right: 7px;">הגדרות משתמש&nbsp;</text><img style="margin-right: -10px;vertical-align: text-top;" src="icons/settings.png"></a></li>
                 <li><a data-toggle="modal" data-target="#songreq"><text style="margin-right: 7px;">בקשת והעלאת שירים&nbsp;</text><img style="margin-right: -10px;vertical-align: text-top;" src="icons/upload.png"></a></li>
                 <li class="divider"></li>
@@ -769,7 +785,7 @@ function loadingding() {
     <img width="230" class="movcardphoto" src="pictures/mov1.jpg"></div>
     <div class="movplayit">
     <svg class="movplay movcardbtn" onclick="playingmovie('movies/1.mp4');" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
-    </div><div class="movsongname"><h1><div class="movoverflowing">Fight Club</div></h1><div class="movartistname"><h2>דרמה</h2></div></td></tr></table></div>
+    </div><div class="movname"><h1><div class="movoverflowing">Fight Club</div></h1><div class="movgenre"><h2>דרמה</h2></div></td></tr></table></div>
   </td>
   <td align="center">
     <table align="center" class="movcard">
@@ -777,8 +793,8 @@ function loadingding() {
     <div class="movalbum">
     <img width="230" class="movcardphoto" src="pictures/mov2.jpg"></div>
     <div class="movplayit">
-    <svg class="movplay movcardbtn" onclick="" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
-    </div><div class="movsongname"><h1><div class="movoverflowing">שרק</div></h1><div class="movartistname"><h2>קומדיה</h2></div></td></tr></table></div>
+    <svg class="movplay movcardbtn" onclick="playingmovie('movies/1.mp4');" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+    </div><div class="movname"><h1><div class="movoverflowing">שרק</div></h1><div class="movgenre"><h2>קומדיה</h2></div></td></tr></table></div>
   </td>
   <td align="center">
     <table align="center" class="movcard">
@@ -786,8 +802,8 @@ function loadingding() {
     <div class="movalbum">
     <img width="230" class="movcardphoto" src="pictures/mov3.jpg"></div>
     <div class="movplayit">
-    <svg class="movplay movcardbtn" onclick="" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
-    </div><div class="movsongname"><h1><div class="movoverflowing">אפס ביחסי אנוש</div></h1><div class="movartistname"><h2>קומדיה</h2></div></td></tr></table></div>
+    <svg class="movplay movcardbtn" onclick="playingmovie('movies/1.mp4');" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+    </div><div class="movname"><h1><div class="movoverflowing">אפס ביחסי אנוש</div></h1><div class="movgenre"><h2>קומדיה</h2></div></td></tr></table></div>
   </td>
   <td align="center">
     <table align="center" class="movcard">
@@ -795,8 +811,8 @@ function loadingding() {
     <div class="movalbum">
     <img width="230" class="movcardphoto" src="pictures/mov4.jpg"></div>
     <div class="movplayit">
-    <svg class="movplay movcardbtn" onclick="" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
-  </div><div class="movsongname"><h1><div class="movoverflowing">טיטאניק</div></h1><div class="movartistname"><h2>דרמה</h2></div></td></tr></table></div>
+    <svg class="movplay movcardbtn" onclick="playingmovie('movies/1.mp4');" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+  </div><div class="movname"><h1><div class="movoverflowing">טיטאניק</div></h1><div class="movgenre"><h2>דרמה</h2></div></td></tr></table></div>
   </td>
   <td align="center">
     <table align="center" class="movcard">
@@ -804,8 +820,8 @@ function loadingding() {
     <div class="movalbum">
     <img width="230" class="movcardphoto" src="pictures/mov5.jpg"></div>
     <div class="movplayit">
-    <svg class="movplay movcardbtn" onclick="" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
-  </div><div class="movsongname"><h1><div class="movoverflowing">הארי פוטר ואוצרות המוות 2</div></h1><div class="movartistname"><h2>פנטזיה</h2></div></td></tr></table></div>
+    <svg class="movplay movcardbtn" onclick="playingmovie('movies/1.mp4');" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+  </div><div class="movname"><h1><div class="movoverflowing">הארי פוטר ואוצרות המוות 2</div></h1><div class="movgenre"><h2>פנטזיה</h2></div></td></tr></table></div>
   </td>
 </tr>
 <tr>
@@ -815,8 +831,8 @@ function loadingding() {
     <div class="movalbum">
     <img width="230" class="movcardphoto" src="pictures/mov6.jpg"></div>
     <div class="movplayit">
-    <svg class="movplay movcardbtn" onclick="" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
-  </div><div class="movsongname"><h1><div class="movoverflowing">מבצע סבתא</div></h1><div class="movartistname"><h2>קומדיה</h2></div></td></tr></table></div>
+    <svg class="movplay movcardbtn" onclick="playingmovie('movies/1.mp4');" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+  </div><div class="movname"><h1><div class="movoverflowing">מבצע סבתא</div></h1><div class="movgenre"><h2>קומדיה</h2></div></td></tr></table></div>
   </td>
   <td align="center">
     <table align="center" class="movcard">
@@ -824,8 +840,8 @@ function loadingding() {
     <div class="movalbum">
     <img width="230" class="movcardphoto" src="pictures/mov7.jpg"></div>
     <div class="movplayit">
-    <svg class="movplay movcardbtn" onclick="" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
-  </div><div class="movsongname"><h1><div class="movoverflowing">דדפול</div></h1><div class="movartistname"><h2>קומדיה</h2></div></td></tr></table></div>
+    <svg class="movplay movcardbtn" onclick="playingmovie('movies/1.mp4');" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+  </div><div class="movname"><h1><div class="movoverflowing">דדפול</div></h1><div class="movgenre"><h2>קומדיה</h2></div></td></tr></table></div>
   </td>
   <td align="center">
     <table align="center" class="movcard">
@@ -833,8 +849,8 @@ function loadingding() {
     <div class="movalbum">
     <img width="230" class="movcardphoto" src="pictures/mov8.jpg"></div>
     <div class="movplayit">
-    <svg class="movplay movcardbtn" onclick="" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
-  </div><div class="movsongname"><h1><div class="movoverflowing">משחקי החיקוי</div></h1><div class="movartistname"><h2>דרמה</h2></div></td></tr></table></div>
+    <svg class="movplay movcardbtn" onclick="playingmovie('movies/1.mp4');" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+  </div><div class="movname"><h1><div class="movoverflowing">משחקי החיקוי</div></h1><div class="movgenre"><h2>דרמה</h2></div></td></tr></table></div>
   </td>
   <td align="center">
     <table align="center" class="movcard">
@@ -842,8 +858,8 @@ function loadingding() {
     <div class="movalbum">
     <img width="230" class="movcardphoto" src="pictures/mov9.jpg"></div>
     <div class="movplayit">
-    <svg class="movplay movcardbtn" onclick="" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
-  </div><div class="movsongname"><h1><div class="movoverflowing">הזאב מוולסטריט</div></h1><div class="movartistname"><h2>דרמה</h2></div></td></tr></table></div>
+    <svg class="movplay movcardbtn" onclick="playingmovie('movies/1.mp4');" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+  </div><div class="movname"><h1><div class="movoverflowing">הזאב מוולסטריט</div></h1><div class="movgenre"><h2>דרמה</h2></div></td></tr></table></div>
   </td>
   <td align="center">
     <table align="center" class="movcard">
@@ -851,8 +867,8 @@ function loadingding() {
     <div class="movalbum">
     <img width="230" class="movcardphoto" src="pictures/mov10.png"></div>
     <div class="movplayit">
-    <svg class="movplay movcardbtn" onclick="" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
-  </div><div class="movsongname"><h1><div class="movoverflowing">היפה והחיה</div></h1><div class="movartistname"><h2>פנטזיה</h2></div></td></tr></table></div>
+    <svg class="movplay movcardbtn" onclick="playingmovie('movies/1.mp4');" fill="#000000" height="120" viewBox="0 0 24 24" width="120"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+  </div><div class="movname"><h1><div class="movoverflowing">היפה והחיה</div></h1><div class="movgenre"><h2>פנטזיה</h2></div></td></tr></table></div>
   </td>
 </tr>
 </table>
